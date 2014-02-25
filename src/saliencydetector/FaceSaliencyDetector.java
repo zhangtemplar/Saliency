@@ -90,7 +90,7 @@ public class FaceSaliencyDetector extends SaliencyDetector{
 	 * detect the face
 	 */
 	@Override
-	public void compute()
+	public void run()
 	{
 		detector.detectMultiScale(img, face);
 		// the face region will be assigned to a high score

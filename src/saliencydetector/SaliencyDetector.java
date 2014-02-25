@@ -99,17 +99,10 @@ public class SaliencyDetector implements Runnable{
 		return result;
 	}
 	/**
-	 * compute the saliency
-	 */
-	public void compute()
-	{
-		System.err.println("The saliency detector is not implemented");
-	}
-	/**
 	 * 
 	 */
 	public void run()
 	{
-		compute();
+		System.err.println("The saliency detector is not implemented");
 	}
 }
