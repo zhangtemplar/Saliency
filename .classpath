@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/opencv244/OpenCV-2.4.8-android-sdk/sdk/java/bin/opencv library - 2.4.8.jar"/>
+	<classpathentry kind="lib" path="/home/qiang/OpenCV-2.4.6-android-sdk/sdk/java/bin/opencv library - 2.4.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
