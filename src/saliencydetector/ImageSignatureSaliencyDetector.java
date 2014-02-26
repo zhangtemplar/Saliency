@@ -6,8 +6,36 @@ import java.util.List;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 
 public class ImageSignatureSaliencyDetector extends SaliencyDetector{
+	/**
+	 * we need to load the library first, but make sure it is only loaded once
+	 */
+	static
+	{
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	}
+	/**
+	 * demo files
+	 * @param args
+	 */
+	public static void main(String [] args)
+	{
+		Mat img=Highgui.imread("C:\\Users\\qzhang53\\Documents\\MATLAB\\JuddSaliencyModel\\sampleImage.jpeg");
+		List<Mat> rgb=new ArrayList<Mat>(3);
+		Core.split(img, rgb);
+		ImageSignatureSaliencyDetector detector=new ImageSignatureSaliencyDetector(img.height(), img.width());
+		Mat sal=new Mat(img.height(), img.width(), CvType.CV_32F);
+		for (Mat c: rgb)
+		{
+			Mat tmp=new Mat();
+			c.convertTo(tmp, CvType.CV_32F);
+			detector.set(tmp, sal);
+		}
+		Highgui.imwrite("C:\\Users\\qzhang53\\Documents\\MATLAB\\JuddSaliencyModel\\sampleImage_sal.jpeg", sal);
+	}
+	
 	/**
 	 * coefficient for FFT
 	 */

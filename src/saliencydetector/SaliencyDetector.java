@@ -2,6 +2,9 @@ package saliencydetector;
 
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 
 /**
  * this will be served as the base class of saliency detector
@@ -104,5 +107,12 @@ public class SaliencyDetector implements Runnable{
 	public void run()
 	{
 		System.err.println("The saliency detector is not implemented");
+	}
+	/**
+	 * clear the saliency map
+	 */
+	public void reset()
+	{
+		sal.setTo(new Scalar(0));
 	}
 }
